@@ -1,23 +1,24 @@
-"""
-Här importeras både randrange från biblioteket random, samt klassen Pet i resources.
-"""
-from random import randrange
+from random import randrange 
+# Här importeras randrange från biblioteket random 
 from resources_klar import Pet
+# Här importeras klassen Pet från resources_klar.py
 
-"""
-Detta är huvudfunktionen, det är i main som själva spelet körs i och med hjälp av de importerade biblioteken kallar på funktionerna skapade i resources.
-"""
 def main():
-    Name = input("\nVälkommen till TimaJotchi Programet!\nVad ska ditt husdjur heta?\nSvar: ")
-    Breed = input("\nVad för djur-ras är ditt husdjur?\nSvar: ")
+    '''
+    Detta är huvudfunktionen, det är i main som själva spelet körs i och kallar på 
+    funktionerna skapade i resources med hjälp av de importerade biblioteken.
+    '''
+    name = input("\nVälkommen till TimaJotchi Programet!\nVad ska ditt husdjur heta?\nSvar: ")
+    breed = input("\nVad för djur-ras är ditt husdjur?\nSvar: ")
 
-    pet = Pet(Name, Breed)#Skapar nytt husdjur
+    pet = Pet(name, breed) 
+    # Skapar nytt husdjur
 
-    input("\nHej! Jag heter " + pet.Name + "\nKlicka på enter-knappen för att ta mig hem!")
+    input("\nHej! Jag heter " + pet.name + "\nKlicka på enter-knappen för att ta mig hem!")
 
     choice = None
 
-    while choice != 0:
+    while choice !=0:
         print(
             """
             ***INTERAGERA MED DITT HUSDJUR***
@@ -32,8 +33,7 @@ def main():
             0 - Lämna
             """
         )
-        
-        choice = input("Svar: ")
+        choice = input("Svar: ")    
 
         if choice == "0":
             print("Hejdå!")
