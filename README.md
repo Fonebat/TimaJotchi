@@ -6,15 +6,14 @@ Syftet med detta projekt är att skapa ett program som bygger ett spel som likna
 
 ## Teknologier/Språk/Byggda med
 
-Som nämnt i beskrivningen så är koden skriven i Python och jag har använt mig av random biblioteket, mer specifikt randint som finns i random biblioteket.
+Som nämnt i beskrivningen så är koden skriven i Python och jag har använt mig av ett verktyg som genererar Docstrings automatiskt till dokumenteringen av koden.
 
-- Python
+- Python 3.9+
+- autoDocstring - Python Docstring Generator
 
 ## Krav
 
-- Visual Studio Code
-- Python
-- Random Library
+- Python 3.9+
 
 ## Installation
 
@@ -116,16 +115,17 @@ Hejdå!
 ## To do lista
 
 Avslutade uppgifter:
--[x] Avsluta spelstrukturen
--[x] Leta efter buggar
--[x] Reparera buggar/fel i koden
--[x] Gör koden enligt PEP-8 standard
--[x] Kommentera med docstrings
--[x] Skriv och avsluta README.md
--[x] Lämna in arbetet
+
+- [x] Avsluta spelstrukturen
+- [x] Leta efter buggar
+- [x] Reparera buggar/fel i koden
+- [x] Gör koden enligt PEP-8 standard
+- [x] Kommentera med docstrings
+- [x] Skriv och avsluta README.md
+- [x] Lämna in arbetet
 Saker att lägga till i framtiden:
--[] Konsekvenser av svält samt ledset humör
--[] Grafik med en rörande figur
+- [] Konsekvenser av svält samt ledset humör
+- [] Grafik med en rörande figur
 
 ## Changelog
 
@@ -165,6 +165,12 @@ Saker att lägga till i framtiden:
 
 - Skrivit koden enligt PEP-8 standard
 - Ändrat kommentarer så att de följer PEP-8 standard
+
+### Version 1.2
+
+#### Tillagt och ändrat V1.2
+
+- Skrivit korrekta docstrings
 
 ## Att bidra
 

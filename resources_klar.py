@@ -1,12 +1,16 @@
 from random import randrange
 # Importerar randrange från random biblioteket.
 
-class Pet(object):
-    '''
+class Pet:
+    """Huvudklassen för husdjuret.
+    """
+
+    """
     Klassen för husdjuret, denna klass innehåller statistik för när 
     djuret kräver olika saker, olika funktioner 
     samt kopplar djurets vokabulär till den externa vocab.txt filen.
-    '''
+    """
+
     happiness_reduce = 2
     happiness_maximum = 10
     happiness_warning = 3
@@ -18,11 +22,19 @@ class Pet(object):
     vocabulary = open('vocab.txt').readlines()
 
     def __init__(self, name, breed):
-        '''
+        """Funktion för värden djuret har vid start.
+
+        Args:
+            name (string): Detta är namnet som spelaren skriver in vid spelets start.
+            breed (string): Detta är djurrasen som spelaren skriver in vid spelets start.
+        """
+
+        """
         Denna funktion bestämmer de olika basvärdena man får när man 
         startar programmet randomiseras hungern och humöret
         medan Namnet och djurrasen har spelaren bestämt innan.
-        '''
+        """
+
         self.name = name
         self.breed = breed
         self.hunger = randrange(self.hunger_maximum)
@@ -32,11 +44,15 @@ class Pet(object):
         # och kan använda dessa ord tillsammans med orden i vocab.txt.
 
     def __clock_tick(self):
-        '''
+        """Funktion för att tiden passerar.
+        """
+
+        """
         Denna funktion är det som drar ner på hunger och humöret 
         när varje rundar passerar, precis som att tiden passerar vanligtvis. 
         Funktionen ser också till att hunger och humöret inte går under 0.
-        '''
+        """
+
         self.hunger -= 1
         self.happiness -= 1
         if self.hunger < self.hunger_bottom:
@@ -45,30 +61,43 @@ class Pet(object):
             self.happiness = 0
 
     def teach(self, word):
-        '''
+        """Funktion för att lära husdjuret nya ord.
+
+        Args:
+            word (string): Funktionen lägger till ett ord i listan vocabulary.
+        """
+
+        """
         Funktionen lägger till ett ord i listan vocabulary, 
         eftersom det är append som lägger till ordet i slutet av listan. 
         Funktionen passerar därefter tiden ett steg.
-        '''
+        """
+
         self.vocabulary.append(word)
         self.__clock_tick()
 
     def talk(self):
-        '''
+        """Funktion för att prata och kolla statistik för husdjuret.
+        """
+
+        """
         Denna funktion kallas när man vill prata med sitt husdjur, 
         funktionen ger tillbaka ett värde för humöret och hungern.
-        '''
-        print("Jag heter", self.name, " och är en ", self.breed, ".", "Just nu är jag ungefär", self.happiness,"/10 glad och ", self.hunger,"/10 hungrig")
+        """
+
+        print("Jag heter", self.name, "och är en", self.breed, ".", "Just nu är jag ungefär", self.happiness,"/10 glad och ", self.hunger,"/10 hungrig")
         print(self.vocabulary[randrange(len(self.vocabulary))])
         self.__clock_tick()
     
     def feed(self):
-        '''
-        Funktionen kallas när man matar sitt husdjur, 
+        """Funktion för att mata husdjuret.
+        """        
+        
+        """Funktionen kallas när man matar sitt husdjur, 
         först printar den ut en fras som visar för användaren att djuret äter, 
         därefter kommer värdet för hungern att öka.
-        Men hunger-värdet ökar bara om nivån är under maximala värdet(10).
-        '''
+        Men hunger-värdet ökar bara om nivån är under maximala värdet(10)."""
+
         print("""
         ***Knaster***
         Gott, tack!
@@ -81,12 +110,16 @@ class Pet(object):
             self.hunger = 10
     
     def play(self):
-        '''
+        """Funktion för att leka med husdjuret.
+        """
+
+        """
         Funktionen kallas när man leker med sitt husdjur, 
         funktionen printar ut en fras för att visa att användaren leker med 
         sitt husdjur och ökar därefter en randomiserad mängd humör-poäng.
         Humör-värdet ökar bara om nivån är under 10, vilket är maximala värdet.
-        '''
+        """
+
         print("Wohoo!")
         if self.happiness < self.happiness_maximum:
             fun = randrange(self.happiness, self.happiness_maximum)
@@ -96,11 +129,15 @@ class Pet(object):
             self.happiness = 10
 
     def mood(self):
-        '''
+        """Funktion för att kolla djurets humör.
+        """
+
+        """
         Denna funktion ger ett resultat om man använder alternativ 5, 
         dvs att funktionen förklarar djurets humör genom att välja 
         en av tre alternativ beroende på humör-värdet.
-        '''
+        """
+
         if self.happiness == self.happiness_maximum:
             print ("Jag är Glad!")
         elif self.happiness < self.happiness_warning:
